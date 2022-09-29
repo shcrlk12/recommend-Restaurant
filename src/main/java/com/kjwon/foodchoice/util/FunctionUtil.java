@@ -3,6 +3,10 @@ package com.kjwon.foodchoice.util;
 import com.kjwon.foodchoice.clazz.LatLongPosition;
 import com.kjwon.foodchoice.clazz.TmPosition;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,11 +59,6 @@ public class FunctionUtil {
         int fn = uni / 588;
         int sn = (uni - (fn * 588)) / 28;
         int tn = uni % 28;
-        System.out.println(character);
-
-        System.out.println("fn" + fn);
-        System.out.println("fn" + sn);
-        System.out.println("fn" + tn);
 
         return tn != 0 ? f[fn] + s[sn] + t[tn]
                 : f[fn] + s[sn];
@@ -80,6 +79,11 @@ public class FunctionUtil {
                 sb.append(getConsonantVowelInChar(String.valueOf(str.charAt(i))));
         }
         return sb.toString();
+    }
 
+    public static BufferedReader getFileBr(String path) throws FileNotFoundException {
+        File file = new File(path);
+
+        return new BufferedReader(new FileReader(file));
     }
 }

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.kjwon.foodchoice.util.FunctionUtil.getConsonantVowel;
+import static com.kjwon.foodchoice.util.FunctionUtil.getFileBr;
 
 @Service
 public class BatchService {
@@ -30,12 +31,12 @@ public class BatchService {
     }
 
     public void keywordSetting(String path){
-        File csv = new File(path);
         BufferedReader br = null;
         String line = "";
         int idx = 0;
+
         try {
-            br = new BufferedReader(new FileReader(csv));
+            br = getFileBr(path);
             while ((line = br.readLine()) != null) {
                 idx++;
                 if(idx == 1){
