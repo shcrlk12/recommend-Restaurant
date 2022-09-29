@@ -70,6 +70,6 @@ CREATE TABLE comment (
       PRIMARY KEY (id),
       KEY idx_user(userId),
       KEY restaurant(restaurantId),
-      KEY idx_comment(commentId)
+      KEY idx_comment(commentId)1
 
 );
