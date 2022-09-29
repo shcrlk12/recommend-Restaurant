@@ -39,7 +39,7 @@
 //                        .accept(MediaType.APPLICATION_JSON)
 //                        .content("{\"username\":\"tester@gmail.com\",\"password\":\"1234\"}")
 //        );
-//        result.andDo(print())
+//        result.andDo(print())1
 //                .andExpect(status().isOk())
 //                .andExpect(handler().handlerType(UserRestController.class))
 //                .andExpect(handler().methodName("login"))
