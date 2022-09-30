@@ -30,10 +30,16 @@ public class UserService{
 //        this.userMapper = userMapper;
 //    }
 
-    public UserDetails findByUserId(String username) throws UsernameNotFoundException {
+    public UserDetails findByUserId(String username) {
         Optional<com.kjwon.foodchoice.users.User> optionalUser = userMapper.findByEmail(username);
+        com.kjwon.foodchoice.users.User user = null;
 
-        com.kjwon.foodchoice.users.User user = optionalUser.orElseThrow(()->{throw new UsernameNotFoundException("user name not found");});
+        if(optionalUser.isPresent()){
+            user = optionalUser.get();
+
+        }else
+            return null;
+//        com.kjwon.foodchoice.users.User user = optionalUser.orElseThrow(()->{throw new RuntimeException("user name not found");});
 
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         grantedAuthorities.add(new SimpleGrantedAuthority("USER"));

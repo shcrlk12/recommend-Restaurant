@@ -45,7 +45,7 @@ public class BatchService {
                 String[] lineArr = line.split(",");
                 String keyword = getConsonantVowel(lineArr[3]);
 
-                if(registerKeywordMapper.findKeyword(keyword).isEmpty())
+                if(!registerKeywordMapper.findKeyword(keyword).isPresent())
                     registerKeywordMapper.insertKeyword(lineArr[3], keyword, Double.parseDouble(lineArr[5]), Double.parseDouble(lineArr[4]));
             }
         } catch (IOException e) {
