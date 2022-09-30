@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mariadb://115.139.45.137:3306/testdb
+    url: jdbc:mariadb://host.docker.internal:3306/testdb
     driver-class-name: org.mariadb.jdbc.Driver
     username: kjwon
     password: 1234

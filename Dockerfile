@@ -1,3 +1,4 @@
+#Nginx Dockerfile
 #FROM nginx
 #
 #COPY default.conf /etc/nginx/conf.d/default.conf
@@ -14,3 +15,5 @@ ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN rm -r /usr/local/tomcat/webapps/ROOT
+
+EXPOSE 8080
