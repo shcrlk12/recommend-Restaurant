@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://database-2.chh4qxbup5ec.ap-northeast-2.rds.amazonaws.com:3306/testdb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: r2624959
+
+sql:
+  init:
+    mode: always
+    schema-locations: classpath:schema.sql
+    data-locations: classpath:data.sql
+

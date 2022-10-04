@@ -20,6 +20,7 @@
         <java.jwt.version>3.12.0</java.jwt.version>
         <guava.version>30.1-jre</guava.version>
         <jackson.datatype.version>2.11.4</jackson.datatype.version>
+        <env>dev</env>
     </properties>
     <dependencies>
         <dependency>
@@ -102,35 +103,36 @@
             <version>${jackson.datatype.version}</version>
         </dependency>
     </dependencies>
+
     <profiles>
         <profile>
             <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <env>dev</env>
-                <build.profile.id>dev</build.profile.id>
-                <profileActive>dev</profileActive>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <env>prod</env>
-                <build.profile.id>prod</build.profile.id>
-                <profileActive>prod</profileActive>
             </properties>
         </profile>
     </profiles>
 
-    <resources>
-        <resource>
-            <directory>src/main/resources</directory>
-        </resource>
-        <resource>
-            <directory>src/main/resources-${env}</directory>
-        </resource>
-    </resources>
+
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources-${env}</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
