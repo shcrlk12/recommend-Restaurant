@@ -1,20 +1,28 @@
-#server:
-#  port: 11101
-#logging:
-#  level:
-#    root: info
-#
-#mybatis:
-#  mapper-locations: mybatis/*.xml
-#  configuration:
-#    map-underscore-to-camel-case: true
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-#
-#jwt:
-#  token:
-#    header: X-PRGRMS-AUTH
-#    issuer: programmers
-#    client-secret: Rel3Bjce2MajBo09qgkNgYaTuzvJe8iwnBFhsDS5
-#    expiry-seconds: 0
-#
-#
+spring:
+  datasource:
+    url: jdbc:mariadb://database-2.chh4qxbup5ec.ap-northeast-2.rds.amazonaws.com:3306/realdb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: r2624959
+
+
+server:
+  port: 11101
+logging:
+  level:
+    root: info
+
+mybatis:
+  mapper-locations: mybatis/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jwt:
+  token:
+    header: X-PRGRMS-AUTH
+    issuer: programmers
+    client-secret: Rel3Bjce2MajBo09qgkNgYaTuzvJe8iwnBFhsDS5
+    expiry-seconds: 0
+
+
