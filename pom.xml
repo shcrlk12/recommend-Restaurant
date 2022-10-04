@@ -119,8 +119,17 @@
                 <profileActive>prod</profileActive>
             </properties>
         </profile>
-
     </profiles>
+
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+        </resource>
+        <resource>
+            <directory>src/main/resources-${env}</directory>
+        </resource>
+    </resources>
+
     <build>
         <plugins>
             <plugin>
