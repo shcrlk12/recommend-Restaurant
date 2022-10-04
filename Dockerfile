@@ -5,7 +5,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
 
-#backend Dockerfile
+#backend Dockerfile1
 #FROM tomcat:9-jre8-alpine
 #
 ## war 파일 복사
