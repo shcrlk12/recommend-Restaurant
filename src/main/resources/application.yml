@@ -1,3 +1,8 @@
+server:
+  port: 11101
+logging:
+  level:
+    root: info
 
 mybatis:
   mapper-locations: mybatis/*.xml

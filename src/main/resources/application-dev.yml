@@ -1,8 +1,4 @@
-server:
-  port: 11101
-logging:
-  level:
-    root: info
+
 
 spring:
   datasource:
