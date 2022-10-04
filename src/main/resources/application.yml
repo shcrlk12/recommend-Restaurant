@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mariadb://115.139.45.137:3306/testdb
+    url: jdbc:mariadb://database-2.chh4qxbup5ec.ap-northeast-2.rds.amazonaws.com:3306/testdb
     driver-class-name: org.mariadb.jdbc.Driver
-    username: kjwon
-    password: 1234
+    username: root
+    password: r2624959
   sql:
     init:
       mode: always

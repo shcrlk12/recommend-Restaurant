@@ -6,11 +6,11 @@
     </select>
 
     <select id="findCompareKeyword" resultType="com.kjwon.foodchoice.vo.RegisterKeyword">
-        SELECT * FROM registerkeyword AS r WHERE r.consonantVowel like #{keyword} LIMIT 5
+        SELECT * FROM registerKeyword AS r WHERE r.consonantVowel like #{keyword} LIMIT 5
     </select>
 
     <select id="findKeyword" resultType="com.kjwon.foodchoice.vo.RegisterKeyword">
-        SELECT * FROM registerkeyword AS r WHERE r.consonantVowel = #{keyword}
+        SELECT * FROM registerKeyword AS r WHERE r.consonantVowel = #{keyword}
     </select>
 
     <insert id="insertKeyword">
