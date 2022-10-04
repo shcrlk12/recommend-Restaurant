@@ -93,22 +93,22 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
-//        http.logout().logoutUrl("/logout");
-//        http.formLogin()
-//                .loginPage("/api/users/login")
-//                .successHandler(loginSuccessHandler())
-//                .failureHandler(loginFailureHandler())
-//                ;
+        http.logout().logoutUrl("/logout");
+        http.formLogin()
+                .loginPage("/api/users/login")
+                .successHandler(loginSuccessHandler())
+                .failureHandler(loginFailureHandler())
+                ;
+
+        http.authorizeRequests()
+                .antMatchers("/api/JSON/restaurant/**").permitAll()
+                .antMatchers("/api/JSON/keyword/**").permitAll()
+                .antMatchers("/api/JSON/comments/**").hasRole("USER")
+        ;
+
+//        http.authorizeRequests().anyRequest().permitAll();
+        super.configure(http);
 //
-//        http.authorizeRequests()
-//                .antMatchers("/api/JSON/restaurant/**").permitAll()
-//                .antMatchers("/api/JSON/keyword/**").permitAll()
-////                .antMatchers("/api/JSON/comments/**").hasRole("USER")
-//        ;
-
-        http.authorizeRequests().anyRequest().permitAll();
-//        super.configure(http);
-
 //            .exceptionHandling()
 //            .accessDeniedHandler(accessDeniedHandler)
 //            .authenticationEntryPoint(unauthorizedHandler)
