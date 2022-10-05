@@ -29,7 +29,6 @@ CREATE TABLE restaurant (
       longitude        real NOT NULL,
       address          varchar(255) NOT NULL,
       zipCode          varchar(10) NOT NULL,
-      titleImageUrl    varchar(255) default '',
       likesNumber      int default 0,
       commentsNumber   int default 0,
 
@@ -76,15 +75,8 @@ CREATE TABLE comment (
 
 CREATE TABLE foodTypeImage (
      id                    bigint NOT NULL auto_increment,
-     content               text NOT NULL default '',
-     likesNumber           int not null default 0,
-     registerDate          datetime NOT NULL,
-     isDisable             int NOT NULL default 0,
-     userId                varchar(50) NOT NULL,
-     restaurantId          bigint not null,
-     commentId             bigint not null default 0,
-     PRIMARY KEY (id),
-     KEY idx_user(userId),
-     KEY restaurant(restaurantId),
-     KEY idx_comment(commentId)
+     titleImageUrl              TEXT NOT NULL,
+     restaurantFoodType    varchar(50) NOT NULL,
+     PRIMARY KEY (id)
+
 );
