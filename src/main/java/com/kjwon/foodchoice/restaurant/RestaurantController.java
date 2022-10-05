@@ -37,17 +37,17 @@ public class RestaurantController {
 
         List<RestaurantDto> restaurantOverviewList = Collections.emptyList();
 
-        String type = classificationType.orElse("popular");
+        String type = classificationType.orElse("popular").trim();
 
         if(!number.isPresent())
             throw new NotFoundException("read number is empty");
 
         if(location.isPresent()) {
-            if (type.equals("distance")) {
-                restaurantOverviewList = foodManagementService.findNearRestaurant(location.orElse(""), offset.orElse(0), number.orElse(10));
-            } else if (type.equals("popular")) {
-                restaurantOverviewList = foodManagementService.findPopularRestaurant(location.orElse(""), offset.orElse(0), number.orElse(10));
-            }
+//            if (type.equals("distance")) {
+                restaurantOverviewList = foodManagementService.findNearRestaurant(location.orElse("").trim(), offset.orElse(0), number.orElse(10));
+//            } else if (type.equals("popular")) {
+//                restaurantOverviewList = foodManagementService.findPopularRestaurant(location.orElse("").trim(), offset.orElse(0), number.orElse(10));
+//            }
         }else{
             restaurantOverviewList = foodManagementService.findMostPopularRestaurant(offset.orElse(0), number.orElse(10));
         }
